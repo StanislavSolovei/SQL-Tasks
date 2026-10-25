@@ -1,0 +1,147 @@
+-- A1
+SELECT * FROM produkty;
+
+-- A2
+SELECT * FROM sprzedawcy;
+
+-- A3
+SELECT * FROM sprzedaz;
+
+-- A4
+SELECT nazwa FROM produkty;
+
+-- A5
+SELECT nazwa, cena FROM produkty;
+
+-- A6
+SELECT imie AS Imie, nazwisko AS Nazwisko FROM sprzedawcy;
+
+-- B1
+SELECT * FROM produkty WHERE kategoria = 'nabial';
+
+-- B2
+SELECT * FROM produkty WHERE cena < 5;
+
+-- B3
+SELECT * FROM produkty WHERE cena >= 6;
+
+-- B4
+SELECT * FROM produkty WHERE cena >= 5 AND cena <= 8;
+
+-- B5
+SELECT * FROM produkty WHERE cena BETWEEN 5 AND 8;
+
+-- B6
+SELECT * FROM produkty WHERE kategoria = 'napoje' OR kategoria = 'pieczywo';
+
+-- B7
+SELECT * FROM produkty WHERE kategoria IN ('napoje', 'pieczywo');
+
+-- B8
+SELECT * FROM produkty WHERE kategoria = 'sypkie' AND cena < 6;
+
+-- B9
+SELECT * FROM sprzedawcy WHERE miasto = 'Gdansk';
+
+-- B10
+SELECT * FROM sprzedawcy WHERE miasto <> 'Torun';
+
+-- B11
+SELECT * FROM produkty WHERE nazwa LIKE 'M%';
+
+-- B12
+SELECT * FROM produkty WHERE nazwa LIKE '%pszenna%';
+
+-- B13
+SELECT * FROM produkty WHERE cena IS NULL;
+
+-- B14
+SELECT * FROM sprzedaz WHERE ilosc > 4;
+
+-- B15
+SELECT * FROM sprzedaz WHERE data_sp >= '2026-03-10';
+
+-- C1
+SELECT * FROM produkty ORDER BY cena ASC;
+
+-- C2
+SELECT * FROM produkty ORDER BY cena DESC;
+
+-- C3
+SELECT * FROM sprzedawcy ORDER BY nazwisko ASC;
+
+-- C4
+SELECT * FROM produkty ORDER BY cena DESC LIMIT 3;
+
+-- C5
+SELECT * FROM produkty ORDER BY cena ASC LIMIT 3;
+
+-- C6
+SELECT DISTINCT kategoria FROM produkty;
+
+-- C7
+SELECT DISTINCT miasto FROM sprzedawcy;
+
+-- C8
+SELECT * FROM produkty WHERE kategoria = 'sypkie' ORDER BY cena DESC;
+
+-- D1
+SELECT COUNT(*) FROM produkty;
+
+-- D2
+SELECT COUNT(*) FROM sprzedawcy;
+
+-- D3
+SELECT COUNT(*) FROM sprzedaz;
+
+-- D4
+SELECT COUNT(*) FROM produkty WHERE kategoria = 'nabial';
+
+-- D5
+SELECT MAX(cena) FROM produkty;
+
+-- D6
+SELECT MIN(cena) FROM produkty;
+
+-- D7
+SELECT SUM(ilosc) FROM sprzedaz;
+
+-- D8
+SELECT AVG(cena) FROM produkty;
+
+-- D9
+SELECT ROUND(AVG(cena), 2) FROM produkty;
+
+-- D10
+SELECT COUNT(*) FROM sprzedaz WHERE id_sprz = 1;
+
+-- E1
+SELECT kategoria, COUNT(*) FROM produkty GROUP BY kategoria;
+
+-- E2
+SELECT kategoria, AVG(cena) FROM produkty GROUP BY kategoria;
+
+-- E3
+SELECT miasto, COUNT(*) FROM sprzedawcy GROUP BY miasto;
+
+-- E4
+SELECT id_sprz, COUNT(*) FROM sprzedaz GROUP BY id_sprz;
+
+-- E5
+SELECT id_prod, COUNT(*) FROM sprzedaz GROUP BY id_prod;
+
+-- F1
+SELECT sprzedaz.id_sprzedazy, produkty.nazwa, sprzedaz.ilosc
+FROM sprzedaz
+JOIN produkty ON sprzedaz.id_prod = produkty.id_prod;
+
+-- F2
+SELECT sprzedaz.id_sprzedazy, sprzedawcy.nazwisko, sprzedaz.ilosc
+FROM sprzedaz
+JOIN sprzedawcy ON sprzedaz.id_sprz = sprzedawcy.id_sprz;
+
+-- F3
+SELECT produkty.nazwa, sprzedawcy.nazwisko, sprzedaz.ilosc, sprzedaz.data_sp
+FROM sprzedaz
+JOIN produkty ON sprzedaz.id_prod = produkty.id_prod
+JOIN sprzedawcy ON sprzedaz.id_sprz = sprzedawcy.id_sprz;

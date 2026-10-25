@@ -1,15 +1,10 @@
-
-
-===============================================================================
 SQL OD ZERA - BAZA "HURTOWNIA"
 Zadania dla poczatkujacych. MySQL / phpMyAdmin.
-===============================================================================
 
 Imie i nazwisko: Stanislav Solovei  Klasa: 3KL
 
-
 JAK PRACOWAC
--------------------------------------------------------------------------------
+
 1. Uruchom XAMPP Control Panel, wlacz Apache i MySQL.
 2. Wejdz na adres: http://localhost/phpmyadmin
 3. Po lewej stronie kliknij baze hurtownia.
@@ -21,9 +16,8 @@ Jesli sie zgadza, przechodz dalej. Jesli nie, poszukaj bledu.
 Swoje zapytania zapisuj w osobnym pliku tekstowym, bo okno w phpMyAdmin
 czysci sie po kazdym uruchomieniu.
 
-
 CO JEST W BAZIE
--------------------------------------------------------------------------------
+
 produkty      id_prod, nazwa, cena, kategoria
 sprzedawcy    id_sprz, imie, nazwisko, miasto
 sprzedaz      id_sprzedazy, id_prod, id_sprz, ilosc, data_sp
@@ -31,10 +25,7 @@ sprzedaz      id_sprzedazy, id_prod, id_sprz, ilosc, data_sp
 Tabela sprzedaz laczy dwie pozostale: kolumna id_prod mowi, jaki produkt
 sprzedano, a id_sprz mowi, kto go sprzedal.
 
-
-===============================================================================
 CZESC A. PIERWSZE ZAPYTANIA
-===============================================================================
 
 A1.  Wyswietl wszystko, co jest w tabeli produkty.                  (12 wierszy)
 
@@ -50,10 +41,7 @@ A6.  Wyswietl imiona i nazwiska sprzedawcow tak, zeby kolumny
      nazywaly sie na ekranie Imie i Nazwisko.                        (6 wierszy)
      Podpowiedz: SELECT imie AS Imie, ...
 
-
-===============================================================================
 CZESC B. WYBIERANIE WIERSZY, CZYLI WHERE
-===============================================================================
 
 B1.  Wyswietl produkty z kategorii nabial.                           (3 wiersze)
 
@@ -93,10 +81,7 @@ B14. Wyswietl transakcje, w ktorych sprzedano wiecej niz 4 sztuki.   (7 wierszy)
 B15. Wyswietl transakcje z 10 marca i pozniej.                       (9 wierszy)
      Podpowiedz: date zapisujemy w apostrofach: '2026-03-10'
 
-
-===============================================================================
 CZESC C. PORZADKOWANIE WYNIKOW
-===============================================================================
 
 C1.  Wyswietl produkty posortowane po cenie od najtanszego.         (12 wierszy)
 
@@ -120,10 +105,7 @@ C7.  Wyswietl liste miast, w ktorych mieszkaja sprzedawcy,
 C8.  Wyswietl produkty z kategorii sypkie, posortowane
      po cenie malejaco.                                              (4 wiersze)
 
-
-===============================================================================
 CZESC D. LICZENIE
-===============================================================================
 
 W tej czesci wynikiem jest zwykle jedna liczba, a nie lista.
 
@@ -150,10 +132,7 @@ D9.  To samo co D8, ale zaokraglij wynik do dwoch miejsc
 
 D10. Policz, ile transakcji przeprowadzil sprzedawca o numerze 1.      (wynik: 5)
 
-
-===============================================================================
 CZESC E. GRUPOWANIE
-===============================================================================
 
 Grupowanie to liczenie osobno dla kazdej wartosci.
 
@@ -173,10 +152,7 @@ E4.  Policz, ile transakcji przeprowadzil kazdy sprzedawca.
 E5.  Dla kazdego produktu policz, ile razy sie sprzedal.
      Wystarczy numer produktu.                                      (10 wierszy)
 
-
-===============================================================================
 CZESC F. DWIE TABELE NARAZ
-===============================================================================
 
 Tu zaczyna sie wlasciwy SQL. Na razie dwa zadania, zeby zobaczyc, o co chodzi.
 
@@ -196,10 +172,7 @@ F3.  Polacz wszystkie trzy tabele: pokaz nazwe produktu,
      nazwisko sprzedawcy, ilosc i date.                             (20 wierszy)
      Podpowiedz: drugie zlaczenie dopisujesz jako kolejna linie JOIN.
 
-
-===============================================================================
 NA KONIEC
-===============================================================================
 
 Zapisz swoje zapytania i pokaz nauczycielowi. Przy sprawdzaniu liczy sie to,
 czy zapytanie dziala i czy zwraca to, o co pytano, a nie dlugosc kodu.
